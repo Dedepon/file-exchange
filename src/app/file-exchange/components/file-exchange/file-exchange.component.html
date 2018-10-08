@@ -1,0 +1,22 @@
+<div class="file-exchange">
+  <div class="file-exchange-uploader">
+    <button mat-raised-button color="primary" (click)="openUploadDialog()">Upload</button>
+  </div>
+  <hr />
+  <div *ngIf="!loading" class="file-exchange-downloader">
+    <div *ngIf="fileList.length === 0">
+      No file uploaded (yet) !<br/>
+      Upload a file to see it in the list.
+    </div>
+    <div *ngIf="fileList.length !== 0" class="file-exchange-download-list">
+      <div *ngFor="let file of fileList" (click)="downloadFile(file)" class="file-exchange-download-button">
+        <mat-icon svgIcon="delete" (click)="deleteFile(file); $event.stopPropagation();"></mat-icon>
+        <img src="{{ getIconFor(file) }}" />
+        <span>{{ file }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="file-exchange-download-list-loading" *ngIf="loading">
+    File list loading...
+  </div>
+</div>

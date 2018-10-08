@@ -1,0 +1,51 @@
+.file-exchange {
+  margin: 24px;
+  .file-exchange-uploader {
+    margin-bottom: 24px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .file-exchange-downloader,
+  .file-exchange-download-list-loading {
+    margin-top: 24px;
+    .file-exchange-download-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .file-exchange-download-button:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .file-exchange-download-button {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 128px;
+        height: 96px;
+        padding: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        user-select: none;
+        margin: 8px;
+        span {
+          text-align: center;
+          word-wrap: break-word;
+          max-width: 100%;
+        }
+        mat-icon {
+          position: absolute;
+          margin: 2px;
+          top: 0;
+          right: 0;
+          opacity: 0.4;
+        }
+        mat-icon:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
